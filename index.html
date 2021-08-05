@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To Do List</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>#TODO</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header-container">
+        <h1>#TODO</h1>
+      </header>
+
+      <main class="main">
+        <!--nav container-->
+        <div class="main-nav__container">
+          <nav>
+            <ul>
+              <li class="active">All</li>
+              <li>Active</li>
+              <li>Completed</li>
+            </ul>
+          </nav>
+        </div>
+        <!--Form container-->
+        <form class="main-form__container">
+          <input type="text" placeholder="add details" id="input-text" />
+          <input type="button" value="Add" id="button-add" />
+        </form>
+
+        <!--container list todo-->
+        <div class="list-todo__container">
+          <!--Container list todo item-->
+
+          <div class="list-todo__container-item">
+            <div class="list-todo__container-item-input">
+              <input type="checkbox" class="todo-checkbox" />
+            </div>
+            <p>Do coding challenges</p>
+            <div class="list-todo__container-item-buttons">
+              <button type="button" class="button-edit">Edit</button>
+              <button type="button" class="material-icons button-delete md-36">delete_outline
+              </button>
+            </div>
+          </div>
+
+
+          <div class="list-todo__container-item">
+            <div class="list-todo__container-item-input">
+              <input type="checkbox" class="todo-checkbox" />
+            </div>
+            <p class="task-completed">Do coding challenges</p>
+            <div class="list-todo__container-item-buttons">
+              <button type="button" class="button-edit">Edit</button>
+              <button type="button" class="material-icons button-delete md-36">delete_outline
+              </button>
+            </div>
+          </div>
+
+          <div class="list-todo__container-item">
+            <div class="list-todo__container-item-input">
+              <input type="checkbox" class="todo-checkbox" />
+            </div>
+            <p>Do coding challenges</p>
+            <div class="list-todo__container-item-buttons">
+              <button type="button" class="button-edit">Edit</button>
+              <button type="button" class="material-icons button-delete md-36">delete_outline
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="remove-task-all__container">
+          <button type="button">
+            <span class="material-icons md-18">delete_outline</span>
+            Remove All
+          </button>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
