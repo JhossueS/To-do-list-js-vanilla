@@ -80,26 +80,7 @@ main {
   cursor: pointer;
 }
 
-.nav-container--li.active {
-  background-color: var(--blueColor);
-  position: absolute;
-  height: 5px;
-  bottom: 0;
-  left: 0;
-  border-radius: 5px 5px 0 0;
-}
-
-.nav-container--li.active.ps-all {
-  width: 25px;
-  left: -4px;
-}
-
-.nav-container--li.active.ps-active {
-  width: 60px;
-  left: calc(50% - 58px);
-}
-
-.nav-container--li:hover::after {
+.nav-container--li.active::after, .nav-container--li:hover::after {
   content: "";
   background-color: var(--blueColor);
   position: absolute;
