@@ -11,7 +11,7 @@ export class Menu {
         this.menuDisable(e.attributes[1]);
       });
     });
-  };
+  }
 
   menuDisable = (id) => {
     this.menu.forEach((e) => {
@@ -19,5 +19,5 @@ export class Menu {
       ? e.classList.add('active')
       : e.classList.remove('active');
     });
-  };
+  }
 }
