@@ -1,7 +1,7 @@
 export class Menu {
   constructor () {
     this.menu = document.querySelectorAll('.nav-container--li');
-    this.id = 0;
+    this.id = 9999;
   }
 
   setMenu = () => {

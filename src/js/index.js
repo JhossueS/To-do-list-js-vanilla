@@ -3,8 +3,6 @@ import { View } from './view.js';
 import { Model } from './model.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  console.log(event);
-
   const menu = new Menu();
   const model = new  Model();
   const view = new View();
@@ -12,4 +10,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
   model.setView(view);
   view.setModel(model);
   menu.setMenu();
+  view.render();
 });

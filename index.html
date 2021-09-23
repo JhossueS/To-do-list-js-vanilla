@@ -21,7 +21,7 @@
       <div class="main-nav--container">
         <nav>
           <ul class="nav__ul">
-            <li class="nav-container--li">All</li>
+            <li class="nav-container--li active">All</li>
             <li class="nav-container--li">Active</li>
             <li class="nav-container--li">Completed</li>
           </ul>
@@ -37,44 +37,6 @@
       <section class="main-listodo--container">
         <!--Container list todo item-->
 
-        <div class="listodo-container--item">
-          <div class="item-container__checkbox">
-            <input type="checkbox" class="todo-checkbox" />
-          </div>
-          <p>Do coding challenges</p>
-          <div class="item-container__buttons">
-            <button type="button" class="button__edit">Edit</button>
-            <button type="button" class="material-icons button__delete md-36">
-              delete_outline
-            </button>
-          </div>
-        </div>
-
-        <div class="listodo-container--item">
-          <div class="item-container__checkbox">
-            <input type="checkbox" class="todo-checkbox" />
-          </div>
-          <p>Do coding challenges</p>
-          <div class="item-container__buttons">
-            <button type="button" class="button__edit">Edit</button>
-            <button type="button" class="material-icons button__delete md-36">
-              delete_outline
-            </button>
-          </div>
-        </div>
-
-        <div class="listodo-container--item">
-          <div class="item-container__checkbox">
-            <input type="checkbox" class="todo-checkbox" />
-          </div>
-          <p class="task-completed">Do coding challenges</p>
-          <div class="item-container__buttons">
-            <button type="button" class="button__edit">Edit</button>
-            <button type="button" class="material-icons button__delete md-36">
-              delete_outline
-            </button>
-          </div>
-        </div>
       </section>
 
       <div class="remove-task-all__container">
@@ -88,6 +50,14 @@
       <div class="modal__container--alert">
         <p>required Description todo</p>
         <button type='button' class='modal__container--button' >Close</button>
+      </div>
+      <div class="modal__container--edit">
+        <p>Edit TODO</p>
+        <form>
+          <input type="text" id="input-edit" class="input-text edit-todo">
+          <input type="button" value="Edit" class="button-add edit" />
+          <input type="button" value="Close" class="modal__container--button" id="closed" />
+        </form>
       </div>
     </div>
     <script src="src/js/index.js" type="module"></script>

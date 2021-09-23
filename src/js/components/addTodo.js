@@ -1,10 +1,10 @@
-import { Alert } from "./alert.js";
+import { Modal } from "./Modal.js";
 
 export class AddTodo {
   constructor() {
     this.btnAdd = document.querySelector("#button-add");
     this.inputTask = document.querySelector("#input-text");
-    this.Alert = new Alert("modal__container");
+    this.modal = new Modal("modal__container", "modal__container--alert");
     this.btnClose = document.querySelector(".modal__container--button");
     this.closeAlert();
   }
@@ -12,7 +12,7 @@ export class AddTodo {
   onclick = (cb) => {
     this.btnAdd.onclick = () => {
       if (this.inputTask.value === "") {
-        this.Alert.show();
+        this.modal.show("alert");
         return;
       }
 
@@ -22,7 +22,7 @@ export class AddTodo {
 
   closeAlert = () => {
     this.btnClose.onclick = () => {
-      this.Alert.hide();
+      this.modal.hide('alert')
     };
   };
 }
