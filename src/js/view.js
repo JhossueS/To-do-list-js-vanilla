@@ -15,10 +15,38 @@ export class View {
     this.modal = new Modal('modal__container', 'modal__container--edit');
     this.container = document.querySelector(".main-listodo--container");
     this.addTodoForm.onclick((description) => this.addTodo(description));
+    this.removeAllTodos();
   }
 
   setModel = () => {
     this.model = new Model();
+    this.btnAll = document.getElementById('9999');
+    this.btnActive = document.getElementById('10000')
+    this.btnCompleted = document.getElementById('10001');
+
+    this.btnAll.onclick = () => {
+      this.container.innerHTML = '';
+      this.model.todos.map((todo) => {
+        this.createTodo(todo);
+      });
+    }
+
+    this.btnActive.onclick = () => {
+      const activatedTodos = this.model.activatedTodos();
+      this.container.innerHTML = '';
+      activatedTodos.map((todo) => {
+        this.createTodo(todo);
+      })
+    }
+
+    this.btnCompleted.onclick = () => {
+      const completedTodos = this.model.completedTodos();
+      this.container.innerHTML = ''
+      completedTodos.map((todo) => {
+        this.createTodo(todo);
+        this.model.toggleClass(todo, 'task-completed');
+      });
+    }
   }
 
   addTodo = (description) => {
@@ -26,11 +54,11 @@ export class View {
     this.createTodo(todo);
   }
 
-  render = () => {
-    this.model.todos.map((todo) => {
+  render = (todos) => {
+    todos.map((todo) => {
       this.createTodo(todo);
       // toggle class
-      this.model.toglleClass(todo, 'task-completed', todo.id);
+      this.model.toggleClass(todo, 'task-completed');
     });
   }
 
@@ -70,7 +98,7 @@ export class View {
   }
 
   handleTodoCompleted = (id) => {
-    this.model.toogleTodo(id);
+    this.model.toggleTodo(id);
   }
 
   handleTodoRemove = (id) => {
@@ -93,6 +121,14 @@ export class View {
       this.model.editTodo(id, inputTodo.value);
       descriptionTodo.textContent = inputTodo.value;
       this.closeModal();
+    }
+  }
+
+  removeAllTodos = () => {
+    const btnRemove = document.getElementById('remove--todos');
+    btnRemove.onclick = () => {
+      this.model.removeAllTodos();
+      this.container.innerHTML = '';
     }
   }
 

@@ -19,19 +19,20 @@ export class Model {
     localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
-  toogleTodo = (id) => {
+  toggleTodo = (id) => {
+    console.log(id)
     const index = this.findIndex(id);
     // todo index
     const todo = this.todos[index];
     todo.completed = !todo.completed;
     // toggle class
-    this.toglleClass(todo, 'task-completed', id);
+    this.toggleClass(todo, 'task-completed', id);
 
     this.saveTodos();
   }
 
-  toglleClass(todo, className, id) {
-    const description = document.querySelector(`#id-${id}`);
+  toggleClass(todo, className) {
+    const description = document.querySelector(`#id-${todo.id}`);
     todo.completed
       ? description.classList.add(className)
       : description.classList.remove(className);
@@ -59,6 +60,23 @@ export class Model {
   // get last todo on array todos
   getLastArrId = (arr) => {
     return arr[arr.length - 1];
+  }
+
+  completedTodos = () => {
+    return this.todos.filter((todo) => {
+      return todo.completed === true;
+    });
+  }
+
+  activatedTodos = () => {
+    return this.todos.filter((todo) => {
+      return todo.completed === false;
+    });
+  }
+
+  removeAllTodos = () => {
+    this.todos.splice(0, this.todos.length)
+    this.saveTodos();
   }
 
   addTodo = (description) => {

@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const model = new  Model();
   const view = new View();
 
+  menu.setMenu();
   model.setView(view);
   view.setModel(model);
-  menu.setMenu();
-  view.render();
+  view.render(model.todos);
 });
